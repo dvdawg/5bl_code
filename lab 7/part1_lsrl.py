@@ -43,10 +43,13 @@ common_error = math.sqrt(cu_term / (num_points - 1))
 
 regression_x = [0, 0.282]
 regression_y = [0, 15.63988 * 0.282]
-plt.plot(regression_x,regression_y, label = 'y = ' + str(slope) + 'x')
+plt.plot(displacement_array, Force_array, "o", markersize = 1, label = "Raw Collected Data")
+plt.plot(regression_x, regression_y, label = 'y = ' + str(slope) + 'x')
 plt.xlabel("Displacement (m)")
 plt.ylabel("-1 * Force (N)")
-plt.title("Force vs Displacement")
+plt.title("Force vs Displacement - Spring on Horizontal Surface")
 plt.legend()
 plt.show()
+
+print(common_error)
 
