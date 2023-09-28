@@ -40,10 +40,13 @@ m = m_numerator/m_denominator
 common_error = math.sqrt(cu_term / (num_points - 1))
 
 # plotting
-plt.plot(displacement, Force, 'o',  markersize = 1)
+
+regression_x = [0, 0.282]
+regression_y = [0, 15.63988 * 0.282]
+plt.plot(regression_x,regression_y, label = 'y = ' + str(slope) + 'x')
 plt.xlabel("Displacement (m)")
-plt.ylabel("Force (N)")
-plt.title("example")
+plt.ylabel("-1 * Force (N)")
+plt.title("Force vs Displacement")
 plt.legend()
 plt.show()
 
