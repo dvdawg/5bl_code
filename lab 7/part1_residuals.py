@@ -5,10 +5,10 @@ import csv
 import os
 
 here = os.path.dirname(os.path.abspath(__file__))
-filename = os.path.join(here, 'part1_trial1.csv')
+filename = os.path.join(here, 'one_period_part1_trial1.csv')
 
 # found variables
-slope = 15.3
+slope = 15.5994
 
 # analysis data variables
 m_numerator = 0

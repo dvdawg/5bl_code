@@ -5,10 +5,10 @@ import csv
 import os
 
 here = os.path.dirname(os.path.abspath(__file__))
-filename = os.path.join(here, 'part1_trial1.csv')
+filename = os.path.join(here, 'one_period_part1_trial1.csv')
 
 # found variables
-slope = 15.63988
+slope = 15.5994
 
 # analysis data variables
 m_numerator = 0
@@ -18,6 +18,9 @@ num_points = 0
 
 Force_array = []
 displacement_array = []
+mForce_array = []
+mdisplacement_array = []
+
 
 #file reading
 with open(filename) as file:
@@ -34,16 +37,16 @@ with open(filename) as file:
         m_denominator += displacement**2
 
         cu_term += (Force - slope*displacement)**2
-        
+
 # final calculations
-m = m_numerator/m_denominator
+m = m_numerator / m_denominator
 common_error = math.sqrt(cu_term / (num_points - 1))
 
 # plotting
-
+print(m)
 regression_x = [0, 0.282]
-regression_y = [0, 15.63988 * 0.282]
-plt.plot(displacement_array, Force_array, "o", markersize = 1, label = "Raw Collected Data")
+regression_y = [0, 15.5994 * 0.282]
+#plt.plot(displacement_array, Force_array, "o", markersize = 1, label = "Raw Collected Data")
 plt.plot(regression_x, regression_y, label = 'y = ' + str(slope) + 'x')
 plt.xlabel("Displacement (m)")
 plt.ylabel("-1 * Force (N)")
