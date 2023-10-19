@@ -76,3 +76,6 @@ print("Alpha m:", alpha_m)
 print("Alpha constant:", alpha_c)
 print("Chi Squared:", chi_squared)
 print(new_alpha_I)
+
+for i in range(len(weights)):
+    print(weights[i])
